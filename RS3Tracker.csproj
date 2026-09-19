@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>RS3Tracker</AssemblyName>
+    <RootNamespace>RS3Tracker</RootNamespace>
+    <Version>1.1.0</Version>
+    <Authors>signalbrycea</Authors>
+    <Company>signalbrycea</Company>
+    <Product>RS3 Timers</Product>
+    <AssemblyTitle>RS3 Timers</AssemblyTitle>
+    <Description>Timer tracker for RuneScape 3 farming and Player-owned farm growth.</Description>
+    <Copyright>Copyright (c) 2026 signalbrycea. MIT License.</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/signalbrycea</RepositoryUrl>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <DebugType>none</DebugType>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="data\timers.json" LogicalName="timers.json" />
+  </ItemGroup>
+
+</Project>

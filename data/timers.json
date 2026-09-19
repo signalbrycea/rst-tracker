@@ -1,0 +1,1205 @@
+{
+ "_about": "Master list for the RS3 timer tracker. minutes = countdown length. Items with stages show a third pick. Edit freely, the app reads this on start.",
+ "_pending": [
+  "PoF buyers reset on a fixed clock: small daily 00:00 UTC, medium every 2 days from 11 Mar 2024, large every 3 days from 12 Mar 2024. Needs a fixed-clock timer type, not a countdown.",
+  "PoF breeding is a global timer per animal, not per pen; skipped for now.",
+  "Farming patches grow on a fixed clock tick, so the countdown is the wiki growth length, real ready time may be up to one cycle later."
+ ],
+ "categories": [
+  {
+   "name": "Farming: Allotments",
+   "items": [
+    {
+     "name": "Potato",
+     "minutes": 40,
+     "level": 1,
+     "note": "4 cycles of 10 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Onion",
+     "minutes": 40,
+     "level": 5,
+     "note": "4 cycles of 10 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Cabbage",
+     "minutes": 40,
+     "level": 7,
+     "note": "4 cycles of 10 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Tomato",
+     "minutes": 40,
+     "level": 12,
+     "note": "4 cycles of 10 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Sweetcorn",
+     "minutes": 50,
+     "level": 20,
+     "note": "5 cycles of 10 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Strawberry",
+     "minutes": 60,
+     "level": 31,
+     "note": "6 cycles of 10 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Watermelon",
+     "minutes": 70,
+     "level": 47,
+     "note": "7 cycles of 10 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Snape grass",
+     "minutes": 200,
+     "level": 80,
+     "note": "5 cycles of 40 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Sunchoke",
+     "minutes": 200,
+     "level": 87,
+     "note": "5 cycles of 40 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Fly trap",
+     "minutes": 200,
+     "level": 93,
+     "note": "5 cycles of 40 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    }
+   ]
+  },
+  {
+   "name": "Farming: Flowers",
+   "items": [
+    {
+     "name": "Marigold",
+     "minutes": 20,
+     "level": 2,
+     "note": "4 cycles of 5 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Rosemary",
+     "minutes": 20,
+     "level": 11,
+     "note": "4 cycles of 5 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Nasturtium",
+     "minutes": 20,
+     "level": 24,
+     "note": "4 cycles of 5 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Woad",
+     "minutes": 20,
+     "level": 25,
+     "note": "4 cycles of 5 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Limpwurt",
+     "minutes": 20,
+     "level": 26,
+     "note": "4 cycles of 5 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "White lily",
+     "minutes": 160,
+     "level": 52,
+     "note": "4 cycles of 40 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Butterfly flower",
+     "minutes": 20,
+     "level": 88,
+     "note": "4 cycles of 5 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Starbloom flower",
+     "minutes": 20,
+     "level": 100,
+     "note": "4 cycles of 5 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    }
+   ]
+  },
+  {
+   "name": "Farming: Herbs",
+   "items": [
+    {
+     "name": "Guam",
+     "minutes": 80,
+     "level": 9,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Marrentill",
+     "minutes": 80,
+     "level": 14,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Tarromin",
+     "minutes": 80,
+     "level": 19,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Harralander",
+     "minutes": 80,
+     "level": 26,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Goutweed",
+     "minutes": 80,
+     "level": 29,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Ranarr",
+     "minutes": 80,
+     "level": 32,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Spirit weed",
+     "minutes": 80,
+     "level": 36,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Toadflax",
+     "minutes": 80,
+     "level": 38,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Irit",
+     "minutes": 80,
+     "level": 44,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Wergali",
+     "minutes": 80,
+     "level": 46,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Avantoe",
+     "minutes": 80,
+     "level": 50,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Kwuarm",
+     "minutes": 80,
+     "level": 56,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Bloodweed",
+     "minutes": 80,
+     "level": 57,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Snapdragon",
+     "minutes": 80,
+     "level": 62,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Cadantine",
+     "minutes": 80,
+     "level": 67,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Lantadyme",
+     "minutes": 80,
+     "level": 73,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Arbuck",
+     "minutes": 80,
+     "level": 77,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Dwarf weed",
+     "minutes": 80,
+     "level": 79,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Torstol",
+     "minutes": 80,
+     "level": 85,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Fellstalk",
+     "minutes": 80,
+     "level": 91,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    }
+   ]
+  },
+  {
+   "name": "Farming: Hops",
+   "items": [
+    {
+     "name": "Barley",
+     "minutes": 40,
+     "level": 3,
+     "note": "4 cycles of 10 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Hammerstone",
+     "minutes": 40,
+     "level": 4,
+     "note": "4 cycles of 10 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Asgarnian",
+     "minutes": 50,
+     "level": 8,
+     "note": "5 cycles of 10 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Wendlewick",
+     "minutes": 50,
+     "level": 11,
+     "note": "5 cycles of 10 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Jute",
+     "minutes": 50,
+     "level": 13,
+     "note": "5 cycles of 10 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Yanillian",
+     "minutes": 60,
+     "level": 16,
+     "note": "6 cycles of 10 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Krandorian",
+     "minutes": 70,
+     "level": 21,
+     "note": "7 cycles of 10 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Wildblood",
+     "minutes": 80,
+     "level": 28,
+     "note": "8 cycles of 10 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Reed",
+     "minutes": 80,
+     "level": 78,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Godly grapevine",
+     "minutes": 80,
+     "level": 95,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    }
+   ]
+  },
+  {
+   "name": "Farming: Bushes",
+   "items": [
+    {
+     "name": "Redberry",
+     "minutes": 100,
+     "level": 10,
+     "note": "5 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Cadavaberry",
+     "minutes": 120,
+     "level": 22,
+     "note": "6 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Dwellberry",
+     "minutes": 140,
+     "level": 36,
+     "note": "7 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Jangerberry",
+     "minutes": 160,
+     "level": 48,
+     "note": "8 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Whiteberry",
+     "minutes": 160,
+     "level": 59,
+     "note": "8 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Poison ivy",
+     "minutes": 160,
+     "level": 70,
+     "note": "8 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Barberry",
+     "minutes": 200,
+     "level": 77,
+     "note": "5 cycles of 40 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Avocado",
+     "minutes": 400,
+     "level": 99,
+     "note": "5 cycles of 80 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Mango",
+     "minutes": 400,
+     "level": 105,
+     "note": "5 cycles of 80 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Lychee",
+     "minutes": 400,
+     "level": 111,
+     "note": "5 cycles of 80 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    }
+   ]
+  },
+  {
+   "name": "Farming: Trees",
+   "items": [
+    {
+     "name": "Oak",
+     "minutes": 160,
+     "level": 15,
+     "note": "4 cycles of 40 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Willow",
+     "minutes": 240,
+     "level": 30,
+     "note": "6 cycles of 40 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Maple",
+     "minutes": 320,
+     "level": 45,
+     "note": "8 cycles of 40 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Yew",
+     "minutes": 400,
+     "level": 60,
+     "note": "10 cycles of 40 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Magic",
+     "minutes": 480,
+     "level": 75,
+     "note": "12 cycles of 40 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    }
+   ]
+  },
+  {
+   "name": "Farming: Fruit trees",
+   "items": [
+    {
+     "name": "Apple",
+     "minutes": 960,
+     "level": 27,
+     "note": "6 cycles of 160 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Banana",
+     "minutes": 960,
+     "level": 33,
+     "note": "6 cycles of 160 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Orange",
+     "minutes": 960,
+     "level": 39,
+     "note": "6 cycles of 160 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Curry",
+     "minutes": 960,
+     "level": 42,
+     "note": "6 cycles of 160 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Pineapple",
+     "minutes": 960,
+     "level": 51,
+     "note": "6 cycles of 160 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Papaya",
+     "minutes": 960,
+     "level": 57,
+     "note": "6 cycles of 160 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Palm",
+     "minutes": 960,
+     "level": 68,
+     "note": "6 cycles of 160 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Ciku",
+     "minutes": 800,
+     "level": 101,
+     "note": "5 cycles of 160 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Guarana",
+     "minutes": 800,
+     "level": 107,
+     "note": "5 cycles of 160 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Carambola",
+     "minutes": 800,
+     "level": 113,
+     "note": "5 cycles of 160 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    }
+   ]
+  },
+  {
+   "name": "Farming: Cacti",
+   "items": [
+    {
+     "name": "Cactus",
+     "minutes": 560,
+     "level": 55,
+     "note": "7 cycles of 80 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Prickly pear",
+     "minutes": 560,
+     "level": 76,
+     "note": "7 cycles of 80 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Potato cactus",
+     "minutes": 560,
+     "level": 86,
+     "note": "7 cycles of 80 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Dragonfruit",
+     "minutes": 560,
+     "level": 95,
+     "note": "7 cycles of 80 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Golden dragonfruit",
+     "minutes": 560,
+     "level": 116,
+     "note": "7 cycles of 80 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    }
+   ]
+  },
+  {
+   "name": "Farming: Mushrooms",
+   "items": [
+    {
+     "name": "Bittercap mushroom",
+     "minutes": 240,
+     "level": 53,
+     "note": "6 cycles of 40 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Morchella mushroom",
+     "minutes": 240,
+     "level": 74,
+     "note": "6 cycles of 40 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Stinkshroom",
+     "minutes": 240,
+     "level": 103,
+     "note": "6 cycles of 40 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Tombshroom",
+     "minutes": 240,
+     "level": 109,
+     "note": "6 cycles of 40 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    }
+   ]
+  },
+  {
+   "name": "Farming: Special",
+   "items": [
+    {
+     "name": "Evil turnip",
+     "minutes": 5,
+     "level": 42,
+     "note": "1 cycles of 5 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Jade vine",
+     "minutes": 5,
+     "level": 53,
+     "note": "1 cycles of 5 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Cave nightshade",
+     "minutes": 320,
+     "level": 63,
+     "note": "4 cycles of 80 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Calquat",
+     "minutes": 1280,
+     "level": 72,
+     "note": "8 cycles of 160 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Spirit",
+     "minutes": 3840,
+     "level": 83,
+     "note": "12 cycles of 320 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Elder",
+     "minutes": 3840,
+     "level": 90,
+     "note": "12 cycles of 320 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Money",
+     "minutes": 2560,
+     "level": 119,
+     "note": "4 cycles of 640 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    }
+   ]
+  },
+  {
+   "name": "Farming: Herblore Habitat",
+   "items": [
+    {
+     "name": "Red blossom",
+     "minutes": 20,
+     "level": 54,
+     "note": "4 cycles of 5 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Blue blossom",
+     "minutes": 20,
+     "level": 54,
+     "note": "4 cycles of 5 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Green blossom",
+     "minutes": 20,
+     "level": 54,
+     "note": "4 cycles of 5 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Erzille",
+     "minutes": 80,
+     "level": 58,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Argway",
+     "minutes": 80,
+     "level": 65,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Ugune",
+     "minutes": 80,
+     "level": 70,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Shengo",
+     "minutes": 80,
+     "level": 74,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Samaden",
+     "minutes": 80,
+     "level": 80,
+     "note": "4 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Lergberry",
+     "minutes": 120,
+     "level": 61,
+     "note": "6 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    },
+    {
+     "name": "Kalferberry",
+     "minutes": 120,
+     "level": 61,
+     "note": "6 cycles of 20 min",
+     "source": "Seeds page, runescape.wiki, 13 Sep 2026"
+    }
+   ]
+  },
+  {
+   "name": "Player-owned farm: Manor Farm",
+   "items": [
+    {
+     "name": "Rabbits",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 12
+      },
+      {
+       "name": "To adult",
+       "minutes": 33
+      },
+      {
+       "name": "To elder",
+       "minutes": 60
+      }
+     ],
+     "source": "Template:Growth stages (Manor Farm), 13 Sep 2026",
+     "note": "Counted from a newborn going into the pen. Grows only while in a pen, even when logged out."
+    },
+    {
+     "name": "Chickens",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 63
+      },
+      {
+       "name": "To adult",
+       "minutes": 139
+      },
+      {
+       "name": "To elder",
+       "minutes": 252
+      }
+     ],
+     "source": "Template:Growth stages (Manor Farm), 13 Sep 2026",
+     "note": "Counted from an egg going into the pen. Grows only while in a pen, even when logged out."
+    },
+    {
+     "name": "Chinchompas",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 504
+      },
+      {
+       "name": "To adult",
+       "minutes": 1386
+      },
+      {
+       "name": "To elder",
+       "minutes": 2520
+      }
+     ],
+     "source": "Template:Growth stages (Manor Farm), 13 Sep 2026",
+     "note": "Counted from a newborn going into the pen. Grows only while in a pen, even when logged out."
+    },
+    {
+     "name": "Sheep",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 24
+      },
+      {
+       "name": "To adult",
+       "minutes": 66
+      },
+      {
+       "name": "To elder",
+       "minutes": 120
+      }
+     ],
+     "source": "Template:Growth stages (Manor Farm), 13 Sep 2026",
+     "note": "Counted from a newborn going into the pen. Grows only while in a pen, even when logged out."
+    },
+    {
+     "name": "Spiders",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 378
+      },
+      {
+       "name": "To adult",
+       "minutes": 832
+      },
+      {
+       "name": "To elder",
+       "minutes": 1512
+      }
+     ],
+     "source": "Template:Growth stages (Manor Farm), 13 Sep 2026",
+     "note": "Counted from an egg going into the pen. Grows only while in a pen, even when logged out."
+    },
+    {
+     "name": "Zygomites",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 1008
+      },
+      {
+       "name": "To adult",
+       "minutes": 2772
+      },
+      {
+       "name": "To elder",
+       "minutes": 5040
+      }
+     ],
+     "source": "Template:Growth stages (Manor Farm), 13 Sep 2026",
+     "note": "Counted from a newborn going into the pen. Grows only while in a pen, even when logged out."
+    },
+    {
+     "name": "Cows",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 72
+      },
+      {
+       "name": "To adult",
+       "minutes": 198
+      },
+      {
+       "name": "To elder",
+       "minutes": 360
+      }
+     ],
+     "source": "Template:Growth stages (Manor Farm), 13 Sep 2026",
+     "note": "Counted from a newborn going into the pen. Grows only while in a pen, even when logged out."
+    },
+    {
+     "name": "Yaks",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 806
+      },
+      {
+       "name": "To adult",
+       "minutes": 2218
+      },
+      {
+       "name": "To elder",
+       "minutes": 4032
+      }
+     ],
+     "source": "Template:Growth stages (Manor Farm), 13 Sep 2026",
+     "note": "Counted from a newborn going into the pen. Grows only while in a pen, even when logged out."
+    },
+    {
+     "name": "Dragons",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 2520
+      },
+      {
+       "name": "To adult",
+       "minutes": 5544
+      },
+      {
+       "name": "To elder",
+       "minutes": 10080
+      }
+     ],
+     "source": "Template:Growth stages (Manor Farm), 13 Sep 2026",
+     "note": "Counted from an egg going into the pen. Grows only while in a pen, even when logged out."
+    }
+   ]
+  },
+  {
+   "name": "Player-owned farm: Anachronia",
+   "items": [
+    {
+     "name": "Frogs",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 180
+      },
+      {
+       "name": "To adult",
+       "minutes": 396
+      },
+      {
+       "name": "To elder",
+       "minutes": 720
+      }
+     ],
+     "source": "Template:Growth stages (Anachronia Dinosaur Farm), 13 Sep 2026",
+     "note": "Counted from an egg going into the pen. Grows only while in a pen, even when logged out."
+    },
+    {
+     "name": "Jadinkos",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 1020
+      },
+      {
+       "name": "To adult",
+       "minutes": 2244
+      },
+      {
+       "name": "To elder",
+       "minutes": 4080
+      }
+     ],
+     "source": "Template:Growth stages (Anachronia Dinosaur Farm), 13 Sep 2026",
+     "note": "Counted from an egg going into the pen. Grows only while in a pen, even when logged out."
+    },
+    {
+     "name": "Salamanders",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 1200
+      },
+      {
+       "name": "To adult",
+       "minutes": 2640
+      },
+      {
+       "name": "To elder",
+       "minutes": 4800
+      }
+     ],
+     "source": "Template:Growth stages (Anachronia Dinosaur Farm), 13 Sep 2026",
+     "note": "Counted from an egg going into the pen. Grows only while in a pen, even when logged out."
+    },
+    {
+     "name": "Varanusaurs",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 1650
+      },
+      {
+       "name": "To adult",
+       "minutes": 3630
+      },
+      {
+       "name": "To elder",
+       "minutes": 6600
+      }
+     ],
+     "source": "Template:Growth stages (Anachronia Dinosaur Farm), 13 Sep 2026",
+     "note": "Counted from an egg going into the pen. Grows only while in a pen, even when logged out."
+    },
+    {
+     "name": "Arcane apoterrasaurs",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 2626.5
+      },
+      {
+       "name": "To adult",
+       "minutes": 5778.3
+      },
+      {
+       "name": "To elder",
+       "minutes": 10506.0
+      }
+     ],
+     "source": "Template:Growth stages (Anachronia Dinosaur Farm), 13 Sep 2026",
+     "note": "Counted from an egg going into the pen. Grows only while in a pen, even when logged out."
+    },
+    {
+     "name": "Brutish dinosaurs",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 2700
+      },
+      {
+       "name": "To adult",
+       "minutes": 5940
+      },
+      {
+       "name": "To elder",
+       "minutes": 10800
+      }
+     ],
+     "source": "Template:Growth stages (Anachronia Dinosaur Farm), 13 Sep 2026",
+     "note": "Counted from an egg going into the pen. Grows only while in a pen, even when logged out."
+    },
+    {
+     "name": "Scimitops",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 2850
+      },
+      {
+       "name": "To adult",
+       "minutes": 6270
+      },
+      {
+       "name": "To elder",
+       "minutes": 11400
+      }
+     ],
+     "source": "Template:Growth stages (Anachronia Dinosaur Farm), 13 Sep 2026",
+     "note": "Counted from an egg going into the pen. Grows only while in a pen, even when logged out."
+    },
+    {
+     "name": "Bagrada rex",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 2926.5
+      },
+      {
+       "name": "To adult",
+       "minutes": 6438.3
+      },
+      {
+       "name": "To elder",
+       "minutes": 11706.0
+      }
+     ],
+     "source": "Template:Growth stages (Anachronia Dinosaur Farm), 13 Sep 2026",
+     "note": "Counted from an egg going into the pen. Grows only while in a pen, even when logged out."
+    },
+    {
+     "name": "Spicati apoterrasaurs",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 3000
+      },
+      {
+       "name": "To adult",
+       "minutes": 6600
+      },
+      {
+       "name": "To elder",
+       "minutes": 12000
+      }
+     ],
+     "source": "Template:Growth stages (Anachronia Dinosaur Farm), 13 Sep 2026",
+     "note": "Counted from an egg going into the pen. Grows only while in a pen, even when logged out."
+    },
+    {
+     "name": "Asciatops",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 3226.5
+      },
+      {
+       "name": "To adult",
+       "minutes": 7098.3
+      },
+      {
+       "name": "To elder",
+       "minutes": 12906.0
+      }
+     ],
+     "source": "Template:Growth stages (Anachronia Dinosaur Farm), 13 Sep 2026",
+     "note": "Counted from an egg going into the pen. Grows only while in a pen, even when logged out."
+    },
+    {
+     "name": "Corbicula rex",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 3264.5
+      },
+      {
+       "name": "To adult",
+       "minutes": 7181.3
+      },
+      {
+       "name": "To elder",
+       "minutes": 13056.5
+      }
+     ],
+     "source": "Template:Growth stages (Anachronia Dinosaur Farm), 13 Sep 2026",
+     "note": "Counted from an egg going into the pen. Grows only while in a pen, even when logged out."
+    },
+    {
+     "name": "Oculi apoterrasaurs",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 3600
+      },
+      {
+       "name": "To adult",
+       "minutes": 7920
+      },
+      {
+       "name": "To elder",
+       "minutes": 14400
+      }
+     ],
+     "source": "Template:Growth stages (Anachronia Dinosaur Farm), 13 Sep 2026",
+     "note": "Counted from an egg going into the pen. Grows only while in a pen, even when logged out."
+    },
+    {
+     "name": "Malletops",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 3750
+      },
+      {
+       "name": "To adult",
+       "minutes": 8250
+      },
+      {
+       "name": "To elder",
+       "minutes": 15000
+      }
+     ],
+     "source": "Template:Growth stages (Anachronia Dinosaur Farm), 13 Sep 2026",
+     "note": "Counted from an egg going into the pen. Grows only while in a pen, even when logged out."
+    },
+    {
+     "name": "Pavosaurus rex",
+     "stages": [
+      {
+       "name": "To adolescent",
+       "minutes": 3976.5
+      },
+      {
+       "name": "To adult",
+       "minutes": 8748.3
+      },
+      {
+       "name": "To elder",
+       "minutes": 15906.0
+      }
+     ],
+     "source": "Template:Growth stages (Anachronia Dinosaur Farm), 13 Sep 2026",
+     "note": "Counted from an egg going into the pen. Grows only while in a pen, even when logged out."
+    }
+   ]
+  }
+ ]
+}
