@@ -246,6 +246,11 @@ namespace RS3Tracker
         void Remove_Click(object sender, RoutedEventArgs e)
         {
             var r = RowOf(sender);
+            if (App.State.ConfirmRemove)
+            {
+                var name = string.IsNullOrWhiteSpace(r.Entry.Label) ? r.Title : r.Title + " (" + r.Entry.Label + ")";
+                if (!ConfirmWindow.Ask(this, "Remove this timer?" + Environment.NewLine + Environment.NewLine + name)) return;
+            }
             _rows.Remove(r);
             App.State.Timers.Remove(r.Entry);
             App.SaveState();

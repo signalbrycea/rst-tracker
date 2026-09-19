@@ -30,6 +30,7 @@
 
     <TextBlock Text="Timers" FontSize="15" FontWeight="SemiBold" Margin="0,20,0,0"/>
     <CheckBox x:Name="ConfirmBox" Content="Ask before resetting a timer" Margin="0,10,0,0" Checked="Confirm_Changed" Unchecked="Confirm_Changed"/>
+    <CheckBox x:Name="ConfirmRemoveBox" Content="Ask before removing a timer" Margin="0,8,0,0" Checked="Confirm_Changed" Unchecked="Confirm_Changed"/>
 
     <TextBlock Text="Files" FontSize="15" FontWeight="SemiBold" Margin="0,20,0,0"/>
     <TextBlock x:Name="CatalogPath" Margin="0,8,0,0" TextWrapping="Wrap" FontSize="12" Foreground="{DynamicResource MutedBrush}"/>

@@ -58,6 +58,7 @@ namespace RS3Tracker
         public bool Muted { get; set; } = false;
         public bool AlwaysOnTop { get; set; } = false;
         public bool ConfirmReset { get; set; } = true;
+        public bool ConfirmRemove { get; set; } = true;
         public string Theme { get; set; } = "dark";
         public string Tab { get; set; } = "Farming";   // last open tab: Farming, Buyers or Resets
         public double WindowWidth { get; set; } = 620;

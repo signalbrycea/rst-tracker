@@ -19,6 +19,7 @@ namespace RS3Tracker
             MuteBox.IsChecked = App.State.Muted;
             TopBox.IsChecked = App.State.AlwaysOnTop;
             ConfirmBox.IsChecked = App.State.ConfirmReset;
+            ConfirmRemoveBox.IsChecked = App.State.ConfirmRemove;
             CatalogPath.Text = "Timer list: " + (Storage.CatalogPathUsed ?? "(built in)");
             StatePath.Text = "Saved timers: " + Storage.StatePath;
             var ver = typeof(SettingsWindow).Assembly.GetName().Version;
@@ -53,6 +54,7 @@ namespace RS3Tracker
         {
             if (!_ready) return;
             App.State.ConfirmReset = ConfirmBox.IsChecked == true;
+            App.State.ConfirmRemove = ConfirmRemoveBox.IsChecked == true;
             App.SaveState();
         }
 
