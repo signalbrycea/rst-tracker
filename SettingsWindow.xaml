@@ -51,8 +51,12 @@
     <TextBlock x:Name="StatePath" Margin="0,4,0,0" TextWrapping="Wrap" FontSize="12" Foreground="{DynamicResource MutedBrush}"/>
 
     <Grid Margin="0,16,0,0">
-      <TextBlock x:Name="AboutText" VerticalAlignment="Center" FontSize="11" Foreground="{DynamicResource MutedBrush}"/>
-      <Button Content="Close" Click="Close_Click" HorizontalAlignment="Right" MinWidth="80"/>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <TextBlock Grid.Column="0" x:Name="AboutText" VerticalAlignment="Center" Margin="0,0,12,0" TextWrapping="Wrap" FontSize="11" Foreground="{DynamicResource MutedBrush}"/>
+      <Button Grid.Column="1" Content="Close" Click="Close_Click" VerticalAlignment="Center" MinWidth="80"/>
     </Grid>
   </StackPanel>
 </Window>
