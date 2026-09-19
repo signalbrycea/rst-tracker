@@ -111,8 +111,11 @@ namespace RS3Tracker
             return $"{(int)t.TotalDays} d {t.Hours} h {t.Minutes} min";
         }
 
+        bool _suppressSearch;
+
         void Search_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (_suppressSearch) return;
             var q = SearchBox.Text.Trim();
             if (q.Length == 0) { Results.Visibility = Visibility.Collapsed; Results.ItemsSource = null; _shown.Clear(); return; }
             var words = q.Split(' ', StringSplitOptions.RemoveEmptyEntries);
@@ -135,6 +138,23 @@ namespace RS3Tracker
                 if (AddButton.IsEnabled) Add_Click(sender, e);
                 e.Handled = true;
             }
+            else if (e.Key == Key.Escape && Results.Visibility == Visibility.Visible)
+            {
+                Results.Visibility = Visibility.Collapsed;
+                e.Handled = true;
+            }
+        }
+
+        // A mouse pick is final: show it in the search box, close the list, move on to the label.
+        // Arrow keys leave the list open so the user can keep browsing (SelectionChanged already applies each one).
+        void Results_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if (Results.SelectedIndex < 0 || Results.SelectedIndex >= _shown.Count) return;
+            _suppressSearch = true;
+            SearchBox.Text = _shown[Results.SelectedIndex].Display;
+            _suppressSearch = false;
+            Results.Visibility = Visibility.Collapsed;
+            LabelBox.Focus();
         }
 
         void Results_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -145,11 +165,6 @@ namespace RS3Tracker
         void Results_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter && AddButton.IsEnabled) { Add_Click(sender, e); e.Handled = true; }
-        }
-
-        void Results_DoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            if (AddButton.IsEnabled) Add_Click(sender, e);
         }
 
         void Apply(Hit h)

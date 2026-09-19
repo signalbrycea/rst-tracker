@@ -95,15 +95,15 @@ namespace RS3Tracker
             return false;
         }
 
-        static string Clock(DateTime utc)
+        internal static string Clock(DateTime utc)
         {
             var local = utc.ToLocalTime();
             return local.Date == DateTime.Today ? local.ToString("HH:mm") : local.ToString("ddd HH:mm");
         }
 
-        static string ClockAt(DateTime utc) => utc.ToLocalTime().Date == DateTime.Today ? "at " + Clock(utc) : Clock(utc);
+        internal static string ClockAt(DateTime utc) => utc.ToLocalTime().Date == DateTime.Today ? "at " + Clock(utc) : Clock(utc);
 
-        static string Fmt(TimeSpan t)
+        internal static string Fmt(TimeSpan t)
         {
             var secs = (long)Math.Ceiling(t.TotalSeconds);
             var days = secs / 86400; secs %= 86400;
@@ -115,6 +115,10 @@ namespace RS3Tracker
     public partial class MainWindow : Window
     {
         readonly ObservableCollection<TimerRow> _rows = new ObservableCollection<TimerRow>();
+        // Fixed-clock rows from the catalog, one collection per heading.
+        readonly ObservableCollection<ClockRow> _buyers = new ObservableCollection<ClockRow>();
+        readonly ObservableCollection<ClockRow> _weekly = new ObservableCollection<ClockRow>();
+        readonly ObservableCollection<ClockRow> _monthly = new ObservableCollection<ClockRow>();
         readonly DispatcherTimer _tick;
         Forms.NotifyIcon? _tray;
 
@@ -126,8 +130,22 @@ namespace RS3Tracker
             Height = App.State.WindowHeight;
             Topmost = App.State.AlwaysOnTop;
             UpdateThemeButton();
+            SelectTab(App.State.Tab);
             Rows.ItemsSource = _rows;
             foreach (var e in App.State.Timers) _rows.Add(new TimerRow(e));
+            ClockBuyers.ItemsSource = _buyers;
+            ClockWeekly.ItemsSource = _weekly;
+            ClockMonthly.ItemsSource = _monthly;
+            foreach (var c in App.Catalog.Clocks)
+            {
+                var row = new ClockRow(c);
+                switch ((c.Group ?? "").Trim().ToLowerInvariant())
+                {
+                    case "buyers": _buyers.Add(row); break;
+                    case "weekly": _weekly.Add(row); break;
+                    case "monthly": _monthly.Add(row); break;
+                }
+            }
 
             // Window.Icon is left unset on purpose: Windows then uses the exe's own icon (art/rst.ico via
             // ApplicationIcon) and picks the right size for the title bar, taskbar and Alt-Tab itself.
@@ -148,6 +166,9 @@ namespace RS3Tracker
             var now = DateTime.UtcNow;
             var finished = new List<TimerRow>();
             foreach (var r in _rows) if (r.Tick(now)) finished.Add(r);
+            foreach (var c in _buyers) c.Tick(now);
+            foreach (var c in _weekly) c.Tick(now);
+            foreach (var c in _monthly) c.Tick(now);
             if (finished.Count > 0) { App.SaveState(); Notify(finished); }
             Resort();
             var running = _rows.Count(r => r.IsRunning && !r.IsDone);
@@ -229,6 +250,23 @@ namespace RS3Tracker
             App.State.Timers.Remove(r.Entry);
             App.SaveState();
             Tick();
+        }
+
+        // Tabs: one panel visible at a time, the choice is saved so the app reopens where Bo left it.
+        void SelectTab(string name)
+        {
+            var tab = name switch { "Buyers" => TabBuyers, "Resets" => TabResets, _ => TabFarming };
+            tab.IsChecked = true;
+        }
+
+        void Tab_Checked(object sender, RoutedEventArgs e)
+        {
+            if (PanelFarming == null) return;   // fires during InitializeComponent before the panels exist
+            var name = (string)((RadioButton)sender).Tag;
+            PanelFarming.Visibility = name == "Farming" ? Visibility.Visible : Visibility.Collapsed;
+            PanelBuyers.Visibility = name == "Buyers" ? Visibility.Visible : Visibility.Collapsed;
+            PanelResets.Visibility = name == "Resets" ? Visibility.Visible : Visibility.Collapsed;
+            if (App.State.Tab != name) { App.State.Tab = name; App.SaveState(); }
         }
 
         void Theme_Click(object sender, RoutedEventArgs e)

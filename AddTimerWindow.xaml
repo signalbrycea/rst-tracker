@@ -9,7 +9,7 @@
     <TextBlock Text="Search" Foreground="{DynamicResource MutedBrush}" Margin="0,0,0,4"/>
     <TextBox x:Name="SearchBox" TextChanged="Search_TextChanged" PreviewKeyDown="Search_KeyDown" ToolTip="Type part of a name, for example yak or toadflax"/>
     <ListBox x:Name="Results" MaxHeight="220" Margin="0,4,0,0" Visibility="Collapsed"
-             SelectionChanged="Results_SelectionChanged" MouseDoubleClick="Results_DoubleClick" KeyDown="Results_KeyDown"/>
+             SelectionChanged="Results_SelectionChanged" PreviewMouseLeftButtonUp="Results_MouseUp" KeyDown="Results_KeyDown"/>
 
     <TextBlock Text="Category" Foreground="{DynamicResource MutedBrush}" Margin="0,14,0,4"/>
     <ComboBox x:Name="CategoryBox" SelectionChanged="Category_Changed"/>

@@ -6,18 +6,79 @@
         Title="RS3 Timers" MinWidth="520" MinHeight="300"
         Background="{DynamicResource BgBrush}" Foreground="{DynamicResource TextBrush}"
         WindowStartupLocation="CenterScreen">
+  <Window.Resources>
+    <!-- Fixed-clock row: name and note on the left, countdown and local reset time on the right. -->
+    <DataTemplate x:Key="ClockRowTemplate" DataType="{x:Type local:ClockRow}">
+      <Border Background="{DynamicResource PanelBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1"
+              CornerRadius="6" Padding="10,8" Margin="0,0,0,6">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <StackPanel Grid.Column="0" VerticalAlignment="Center">
+            <TextBlock Text="{Binding Name}" FontSize="15" FontWeight="SemiBold"/>
+            <TextBlock Text="{Binding Note}" Margin="0,3,10,0" FontSize="12" TextWrapping="Wrap" Foreground="{DynamicResource MutedBrush}"/>
+          </StackPanel>
+          <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="0,0,4,0">
+            <TextBlock Text="{Binding Remaining}" FontSize="20" FontFamily="Consolas" HorizontalAlignment="Right"/>
+            <TextBlock Text="{Binding SubText}" FontSize="12.5" FontWeight="SemiBold" HorizontalAlignment="Right"/>
+          </StackPanel>
+        </Grid>
+      </Border>
+    </DataTemplate>
+  </Window.Resources>
   <DockPanel Margin="12">
+    <!-- Top strip: tab headers on the left, theme and settings on the right. -->
     <Grid DockPanel.Dock="Top" Margin="0,0,0,10">
       <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="Auto"/>
         <ColumnDefinition Width="*"/>
         <ColumnDefinition Width="Auto"/>
         <ColumnDefinition Width="Auto"/>
       </Grid.ColumnDefinitions>
+      <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Bottom">
+        <RadioButton x:Name="TabFarming" Style="{StaticResource TabButton}" GroupName="Tabs" Content="Farming" Tag="Farming" Checked="Tab_Checked" ToolTip="Farming crops and player-owned farm growth timers"/>
+        <RadioButton x:Name="TabBuyers" Style="{StaticResource TabButton}" GroupName="Tabs" Content="Buyers" Tag="Buyers" Checked="Tab_Checked" ToolTip="Player-owned farm buyers"/>
+        <RadioButton x:Name="TabResets" Style="{StaticResource TabButton}" GroupName="Tabs" Content="Resets" Tag="Resets" Checked="Tab_Checked" ToolTip="Weekly and monthly resets"/>
+      </StackPanel>
+      <Button Grid.Column="1" x:Name="ThemeButton" Click="Theme_Click" Padding="10,4" FontSize="16" Margin="0,0,6,0" VerticalAlignment="Center" ToolTip="Switch dark / light"/>
+      <Button Grid.Column="2" Click="Settings_Click" Padding="10,4" FontSize="16" VerticalAlignment="Center" ToolTip="Settings">&#x2699;</Button>
+    </Grid>
+    <Border DockPanel.Dock="Top" Height="1" Background="{DynamicResource BorderBrush}" Margin="0,-10,0,10"/>
+
+    <!-- One panel per tab, stacked in a Grid so only the visible one shows and each fills the window. -->
+    <Grid>
+    <!-- Buyers tab: player-owned farm buyers, fixed game-clock resets. -->
+    <ScrollViewer x:Name="PanelBuyers" Visibility="Collapsed" VerticalScrollBarVisibility="Auto">
+      <StackPanel>
+        <TextBlock Text="Player-owned farm buyers" FontSize="15" FontWeight="SemiBold" Margin="4,4,4,8"/>
+        <ItemsControl x:Name="ClockBuyers" ItemTemplate="{StaticResource ClockRowTemplate}"/>
+        <TextBlock Margin="4,6,4,0" TextWrapping="Wrap" FontSize="12.5" Foreground="{DynamicResource MutedBrush}"
+                   Text="Game clock is UTC on every world; times here are shown in your local time. A buyer only spawns if you log in during their day."/>
+      </StackPanel>
+    </ScrollViewer>
+
+    <!-- Resets tab: weekly group then monthly group. -->
+    <ScrollViewer x:Name="PanelResets" Visibility="Collapsed" VerticalScrollBarVisibility="Auto">
+      <StackPanel>
+        <TextBlock Text="Weekly" FontSize="15" FontWeight="SemiBold" Margin="4,4,4,8"/>
+        <ItemsControl x:Name="ClockWeekly" ItemTemplate="{StaticResource ClockRowTemplate}"/>
+        <TextBlock Text="Monthly" FontSize="15" FontWeight="SemiBold" Margin="4,12,4,8"/>
+        <ItemsControl x:Name="ClockMonthly" ItemTemplate="{StaticResource ClockRowTemplate}"/>
+        <TextBlock Margin="4,6,4,0" TextWrapping="Wrap" FontSize="12.5" Foreground="{DynamicResource MutedBrush}"
+                   Text="Game clock is UTC on every world; times here are shown in your local time."/>
+      </StackPanel>
+    </ScrollViewer>
+
+    <!-- Farming tab: add button, summary line, then the timer list. -->
+    <DockPanel x:Name="PanelFarming">
+    <Grid DockPanel.Dock="Top" Margin="0,0,0,10">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
       <Button Grid.Column="0" Style="{StaticResource AccentButton}" Click="Add_Click" Padding="14,6" FontSize="15">+ Add timer</Button>
       <TextBlock Grid.Column="1" x:Name="Summary" VerticalAlignment="Center" Margin="14,0" FontSize="14" FontWeight="SemiBold" Foreground="{DynamicResource TextBrush}"/>
-      <Button Grid.Column="2" x:Name="ThemeButton" Click="Theme_Click" Padding="10,4" FontSize="16" Margin="0,0,6,0" ToolTip="Switch dark / light"/>
-      <Button Grid.Column="3" Click="Settings_Click" Padding="10,4" FontSize="16" ToolTip="Settings">&#x2699;</Button>
     </Grid>
 
     <TextBlock DockPanel.Dock="Top" x:Name="EmptyHint" Margin="4,30,4,0" TextWrapping="Wrap" Foreground="{DynamicResource MutedBrush}"
@@ -59,5 +120,7 @@
         </ItemsControl.ItemTemplate>
       </ItemsControl>
     </ScrollViewer>
+    </DockPanel>
+    </Grid>
   </DockPanel>
 </Window>

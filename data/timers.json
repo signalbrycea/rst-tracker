@@ -1,9 +1,16 @@
 {
  "_about": "Master list for the RS3 timer tracker. minutes = countdown length. Items with stages show a third pick. Edit freely, the app reads this on start.",
  "_pending": [
-  "PoF buyers reset on a fixed clock: small daily 00:00 UTC, medium every 2 days from 11 Mar 2024, large every 3 days from 12 Mar 2024. Needs a fixed-clock timer type, not a countdown.",
   "PoF breeding is a global timer per animal, not per pen; skipped for now.",
   "Farming patches grow on a fixed clock tick, so the countdown is the wiki growth length, real ready time may be up to one cycle later."
+ ],
+ "_clocks": "Fixed-clock resets shown on the Buyers and Resets tabs. group = buyers | weekly | monthly. kind = daily | weekly (Wednesday) | monthly (the 1st) | cycle (anchor yyyy-MM-dd plus days). Everything is 00:00 UTC game time; the app shows local time.",
+ "clocks": [
+  { "name": "Small buyers", "group": "buyers", "kind": "daily", "note": "12 small animals, new buyer every day" },
+  { "name": "Medium buyers", "group": "buyers", "kind": "cycle", "anchor": "2024-03-11", "days": 2, "note": "8 medium animals, new buyer every 2 days" },
+  { "name": "Large buyers", "group": "buyers", "kind": "cycle", "anchor": "2024-03-12", "days": 3, "note": "6 large animals, new buyer every 3 days" },
+  { "name": "Weekly reset", "group": "weekly", "kind": "weekly", "note": "Wednesday 00:00 UTC, weekly D&Ds and caps" },
+  { "name": "Monthly reset", "group": "monthly", "kind": "monthly", "note": "1st of the month 00:00 UTC, monthly D&Ds" }
  ],
  "categories": [
   {

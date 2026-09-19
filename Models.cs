@@ -12,6 +12,19 @@ namespace RS3Tracker
     public class Catalog
     {
         [JsonPropertyName("categories")] public List<Category> Categories { get; set; } = new List<Category>();
+        [JsonPropertyName("clocks")] public List<Clock> Clocks { get; set; } = new List<Clock>();
+    }
+
+    // Fixed-clock reset: group = buyers | weekly | monthly (which tab and heading it sits under),
+    // kind = daily | weekly | monthly | cycle (cycle needs anchor "yyyy-MM-dd" and days). All 00:00 UTC.
+    public class Clock
+    {
+        [JsonPropertyName("name")] public string Name { get; set; } = "";
+        [JsonPropertyName("group")] public string Group { get; set; } = "";
+        [JsonPropertyName("kind")] public string Kind { get; set; } = "daily";
+        [JsonPropertyName("anchor")] public string? Anchor { get; set; }
+        [JsonPropertyName("days")] public int? Days { get; set; }
+        [JsonPropertyName("note")] public string? Note { get; set; }
     }
 
     public class Category
@@ -46,6 +59,7 @@ namespace RS3Tracker
         public bool AlwaysOnTop { get; set; } = false;
         public bool ConfirmReset { get; set; } = true;
         public string Theme { get; set; } = "dark";
+        public string Tab { get; set; } = "Farming";   // last open tab: Farming, Buyers or Resets
         public double WindowWidth { get; set; } = 620;
         public double WindowHeight { get; set; } = 520;
     }
