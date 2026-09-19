@@ -4,13 +4,118 @@
   "PoF breeding is a global timer per animal, not per pen; skipped for now.",
   "Farming patches grow on a fixed clock tick, so the countdown is the wiki growth length, real ready time may be up to one cycle later."
  ],
- "_clocks": "Fixed-clock resets shown on the Buyers and Resets tabs. group = buyers | weekly | monthly. kind = daily | weekly (Wednesday) | monthly (the 1st) | cycle (anchor yyyy-MM-dd plus days). Everything is 00:00 UTC game time; the app shows local time.",
+ "_clocks": "Fixed-clock resets shown on the Buyers and Resets tabs. group = buyers | weekly | monthly. kind = daily | weekly (Wednesday) | monthly (the 1st) | cycle (anchor yyyy-MM-dd plus days). Everything is 00:00 UTC game time; the app shows local time. A clock may carry \"items\" (name, note): a checklist under the row, ticks clear at that reset.",
  "clocks": [
-  { "name": "Small buyers", "group": "buyers", "kind": "daily", "note": "12 small animals, new buyer every day" },
-  { "name": "Medium buyers", "group": "buyers", "kind": "cycle", "anchor": "2024-03-11", "days": 2, "note": "8 medium animals, new buyer every 2 days" },
-  { "name": "Large buyers", "group": "buyers", "kind": "cycle", "anchor": "2024-03-12", "days": 3, "note": "6 large animals, new buyer every 3 days" },
-  { "name": "Weekly reset", "group": "weekly", "kind": "weekly", "note": "Wednesday 00:00 UTC, weekly D&Ds and caps" },
-  { "name": "Monthly reset", "group": "monthly", "kind": "monthly", "note": "1st of the month 00:00 UTC, monthly D&Ds" }
+  {
+   "name": "Small buyers",
+   "group": "buyers",
+   "kind": "daily",
+   "note": "12 small animals, new buyer every day"
+  },
+  {
+   "name": "Medium buyers",
+   "group": "buyers",
+   "kind": "cycle",
+   "anchor": "2024-03-11",
+   "days": 2,
+   "note": "8 medium animals, new buyer every 2 days"
+  },
+  {
+   "name": "Large buyers",
+   "group": "buyers",
+   "kind": "cycle",
+   "anchor": "2024-03-12",
+   "days": 3,
+   "note": "6 large animals, new buyer every 3 days"
+  },
+  {
+   "name": "Weekly reset",
+   "group": "weekly",
+   "kind": "weekly",
+   "note": "Wednesday 00:00 UTC, weekly D&Ds and caps",
+   "items": [
+    {
+     "name": "Penguin Hide and Seek",
+     "note": "12+ points a week, each worth 10,000 gp or a lamp"
+    },
+    {
+     "name": "Tears of Guthix",
+     "note": "Xp in your lowest skill. Needs the quest"
+    },
+    {
+     "name": "Circus",
+     "note": "Magic, Ranged and Agility xp, three acts (plus Firemaking and Thieving acts with quests)"
+    },
+    {
+     "name": "Familiarisation",
+     "note": "Triple charm drops for up to 40 minutes. Needs Wolf Whistle"
+    },
+    {
+     "name": "Herby Werby",
+     "note": "Herblore xp on Anachronia"
+    },
+    {
+     "name": "Agoroth",
+     "note": "A black pearl (bonus xp), twice a week. Needs A Shadow over Ashdale"
+    },
+    {
+     "name": "Broken Home replay",
+     "note": "A large xp lamp. Needs Broken Home"
+    },
+    {
+     "name": "Meg",
+     "note": "Lamp plus coins for three answers. Needs a player-owned port"
+    },
+    {
+     "name": "Skeletal Horror",
+     "note": "Slayer and Prayer xp. Needs the Rag and Bone Man and Fur 'n Seek wish lists"
+    },
+    {
+     "name": "Wisps of the Grove",
+     "note": "Farming and Hunter xp in the Lost Grove"
+    },
+    {
+     "name": "God jadinkos",
+     "note": "Hunter xp plus a Herblore Habitat bonus. Needs 81 Hunter"
+    },
+    {
+     "name": "Champion's Challenge",
+     "note": "Slayer and Constitution xp per champion. Needs champion's scrolls"
+    },
+    {
+     "name": "Memory of Nomad",
+     "note": "700k to 1m gp of loot. Needs Nomad's Elegy"
+    },
+    {
+     "name": "Rush of Blood",
+     "note": "Slayer waves in Prifddinas. Needs Plague's End and 85 Slayer"
+    }
+   ]
+  },
+  {
+   "name": "Monthly reset",
+   "group": "monthly",
+   "kind": "monthly",
+   "note": "1st of the month 00:00 UTC, monthly D&Ds",
+   "items": [
+    {
+     "name": "Troll Invasion",
+     "note": "A reward book of xp in any skill, combat or a non-combat defence"
+    },
+    {
+     "name": "God Statues",
+     "note": "Five statues, Construction xp plus Prayer or Slayer lamps"
+    },
+    {
+     "name": "Giant Oyster",
+     "note": "Feed it this month, loot it next month. Needs Beneath Cursed Tides"
+    },
+    {
+     "name": "Effigy Incubator",
+     "note": "Effigies and Invention points. Needs Desperate Measures and 85 in a listed skill"
+    }
+   ]
+  }
  ],
  "categories": [
   {

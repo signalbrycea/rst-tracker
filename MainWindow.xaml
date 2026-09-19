@@ -7,24 +7,63 @@
         Background="{DynamicResource BgBrush}" Foreground="{DynamicResource TextBrush}"
         WindowStartupLocation="CenterScreen">
   <Window.Resources>
+    <BooleanToVisibilityConverter x:Key="BoolToVis"/>
     <!-- Fixed-clock row: name and note on the left, countdown and local reset time on the right. -->
     <DataTemplate x:Key="ClockRowTemplate" DataType="{x:Type local:ClockRow}">
       <Border Background="{DynamicResource PanelBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1"
               CornerRadius="6" Padding="10,8" Margin="0,0,0,6">
-        <Grid>
-          <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="Auto"/>
-          </Grid.ColumnDefinitions>
-          <StackPanel Grid.Column="0" VerticalAlignment="Center">
-            <TextBlock Text="{Binding Name}" FontSize="15" FontWeight="SemiBold"/>
-            <TextBlock Text="{Binding Note}" Margin="0,3,10,0" FontSize="12" TextWrapping="Wrap" Foreground="{DynamicResource MutedBrush}"/>
-          </StackPanel>
-          <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="0,0,4,0">
-            <TextBlock Text="{Binding Remaining}" FontSize="20" FontFamily="Consolas" HorizontalAlignment="Right"/>
-            <TextBlock Text="{Binding SubText}" FontSize="12.5" FontWeight="SemiBold" HorizontalAlignment="Right"/>
-          </StackPanel>
-        </Grid>
+        <StackPanel>
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+              <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Name}" FontSize="15" FontWeight="SemiBold"/>
+                <TextBlock Text="{Binding Progress}" Margin="10,0,0,0" VerticalAlignment="Bottom" FontSize="12" FontWeight="SemiBold"
+                           Visibility="{Binding HasItems, Converter={StaticResource BoolToVis}}">
+                  <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                      <Setter Property="Foreground" Value="{DynamicResource MutedBrush}"/>
+                      <Style.Triggers>
+                        <DataTrigger Binding="{Binding AllDone}" Value="True">
+                          <Setter Property="Foreground" Value="{DynamicResource GreenBrush}"/>
+                        </DataTrigger>
+                      </Style.Triggers>
+                    </Style>
+                  </TextBlock.Style>
+                </TextBlock>
+              </StackPanel>
+              <TextBlock Text="{Binding Note}" Margin="0,3,10,0" FontSize="12" TextWrapping="Wrap" Foreground="{DynamicResource MutedBrush}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="0,0,4,0">
+              <TextBlock Text="{Binding Remaining}" FontSize="20" FontFamily="Consolas" HorizontalAlignment="Right"/>
+              <TextBlock Text="{Binding SubText}" FontSize="12.5" FontWeight="SemiBold" HorizontalAlignment="Right"/>
+            </StackPanel>
+          </Grid>
+          <!-- Checklist: two columns of tick boxes, ticked ones go muted. Hover shows the note. -->
+          <ItemsControl ItemsSource="{Binding Items}" Margin="0,8,0,0" Visibility="{Binding HasItems, Converter={StaticResource BoolToVis}}">
+            <ItemsControl.ItemsPanel>
+              <ItemsPanelTemplate><UniformGrid Columns="2"/></ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+              <DataTemplate DataType="{x:Type local:CheckRow}">
+                <CheckBox IsChecked="{Binding IsDone, Mode=TwoWay}" Content="{Binding Name}" ToolTip="{Binding Note}" Margin="0,3,8,3">
+                  <CheckBox.Style>
+                    <Style TargetType="CheckBox" BasedOn="{StaticResource {x:Type CheckBox}}">
+                      <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsDone}" Value="True">
+                          <Setter Property="Foreground" Value="{DynamicResource MutedBrush}"/>
+                        </DataTrigger>
+                      </Style.Triggers>
+                    </Style>
+                  </CheckBox.Style>
+                </CheckBox>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </StackPanel>
       </Border>
     </DataTemplate>
   </Window.Resources>

@@ -25,6 +25,13 @@ namespace RS3Tracker
         [JsonPropertyName("anchor")] public string? Anchor { get; set; }
         [JsonPropertyName("days")] public int? Days { get; set; }
         [JsonPropertyName("note")] public string? Note { get; set; }
+        [JsonPropertyName("items")] public List<ClockItem>? Items { get; set; }   // optional checklist under the row
+    }
+
+    public class ClockItem
+    {
+        [JsonPropertyName("name")] public string Name { get; set; } = "";
+        [JsonPropertyName("note")] public string? Note { get; set; }
     }
 
     public class Category
@@ -60,10 +67,18 @@ namespace RS3Tracker
         public bool ConfirmReset { get; set; } = true;
         public bool ConfirmRemove { get; set; } = true;
         public string? SoundPath { get; set; }   // custom alert sound; null or missing file = built-in chime
+        public Dictionary<string, CheckState> Checks { get; set; } = new Dictionary<string, CheckState>();   // checklist ticks per clock name
         public string Theme { get; set; } = "dark";
         public string Tab { get; set; } = "Farming";   // last open tab: Farming, Buyers or Resets
         public double WindowWidth { get; set; } = 620;
         public double WindowHeight { get; set; } = 520;
+    }
+
+    // Ticks under one reset row. CycleStart is the reset instant they belong to; when it changes they clear.
+    public class CheckState
+    {
+        public DateTime? CycleStart { get; set; }
+        public List<string> Done { get; set; } = new List<string>();
     }
 
     public class TimerEntry
