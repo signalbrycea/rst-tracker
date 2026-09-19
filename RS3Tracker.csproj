@@ -9,7 +9,8 @@
     <ImplicitUsings>disable</ImplicitUsings>
     <AssemblyName>RS3Tracker</AssemblyName>
     <RootNamespace>RS3Tracker</RootNamespace>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
+    <ApplicationIcon>art\rst.ico</ApplicationIcon>
     <Authors>signalbrycea</Authors>
     <Company>signalbrycea</Company>
     <Product>RS3 Timers</Product>
@@ -30,6 +31,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="data\timers.json" LogicalName="timers.json" />
+    <Resource Include="art\rst.ico" />
   </ItemGroup>
 
 </Project>

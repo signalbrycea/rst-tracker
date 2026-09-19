@@ -129,9 +129,10 @@ namespace RS3Tracker
             Rows.ItemsSource = _rows;
             foreach (var e in App.State.Timers) _rows.Add(new TimerRow(e));
 
-            var icon = MakeIcon();
-            Icon = Imaging.CreateBitmapSourceFromHIcon(icon.Handle, Int32Rect.Empty, System.Windows.Media.Imaging.BitmapSizeOptions.FromEmptyOptions());
-            SetupTray(icon);
+            // Window.Icon is left unset on purpose: Windows then uses the exe's own icon (art/rst.ico via
+            // ApplicationIcon) and picks the right size for the title bar, taskbar and Alt-Tab itself.
+            // Setting it from a BitmapImage handed the taskbar a 16 px frame, which drew tiny.
+            SetupTray(LoadIcon());
 
             _tick = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
             _tick.Tick += (_, _) => Tick();
@@ -288,6 +289,18 @@ namespace RS3Tracker
             if (WindowState == WindowState.Normal) { App.State.WindowWidth = Width; App.State.WindowHeight = Height; }
             App.SaveState();
             if (_tray != null) { _tray.Visible = false; _tray.Dispose(); _tray = null; }
+        }
+
+        // The RST badge from art/rst.ico (embedded). Falls back to the old drawn clock if the resource is missing.
+        static Drawing.Icon LoadIcon()
+        {
+            try
+            {
+                var res = Application.GetResourceStream(new Uri("pack://application:,,,/art/rst.ico"));
+                if (res != null) using (var s = res.Stream) return new Drawing.Icon(s, new Drawing.Size(32, 32));
+            }
+            catch { }
+            return MakeIcon();
         }
 
         static Drawing.Icon MakeIcon()
