@@ -1,5 +1,6 @@
 // RS3 Timers (RS3Tracker)
-// Copyright (c) 2026 signalbrycea. Licensed under the MIT License, see LICENSE.
+// Copyright (c) 2026 signalbrycea. PolyForm Noncommercial License 1.0.0, see LICENSE.
+// Required Notice: Copyright signalbrycea (https://github.com/signalbrycea)
 
 using System.Windows;
 
@@ -21,7 +22,7 @@ namespace RS3Tracker
             CatalogPath.Text = "Timer list: " + (Storage.CatalogPathUsed ?? "(built in)");
             StatePath.Text = "Saved timers: " + Storage.StatePath;
             var ver = typeof(SettingsWindow).Assembly.GetName().Version;
-            AboutText.Text = $"RS3 Timers {ver?.Major}.{ver?.Minor}  (c) 2026 signalbrycea  MIT License";
+            AboutText.Text = $"RS3 Timers {ver?.Major}.{ver?.Minor}  (c) 2026 signalbrycea  PolyForm Noncommercial 1.0.0";
             _ready = true;
         }
 

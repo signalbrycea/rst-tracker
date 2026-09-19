@@ -15,8 +15,8 @@
     <Product>RS3 Timers</Product>
     <AssemblyTitle>RS3 Timers</AssemblyTitle>
     <Description>Timer tracker for RuneScape 3 farming and Player-owned farm growth.</Description>
-    <Copyright>Copyright (c) 2026 signalbrycea. MIT License.</Copyright>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>Copyright (c) 2026 signalbrycea. PolyForm Noncommercial License 1.0.0.</Copyright>
+    <PackageLicenseExpression>PolyForm-Noncommercial-1.0.0</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/signalbrycea</RepositoryUrl>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <SelfContained>true</SelfContained>

@@ -1,5 +1,6 @@
 // RS3 Timers (RS3Tracker)
-// Copyright (c) 2026 signalbrycea. Licensed under the MIT License, see LICENSE.
+// Copyright (c) 2026 signalbrycea. PolyForm Noncommercial License 1.0.0, see LICENSE.
+// Required Notice: Copyright signalbrycea (https://github.com/signalbrycea)
 
 using System;
 using System.Runtime.InteropServices;
