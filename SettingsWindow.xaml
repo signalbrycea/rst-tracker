@@ -22,6 +22,20 @@
       <CheckBox x:Name="MuteBox" Content="Mute" Checked="Mute_Changed" Unchecked="Mute_Changed" VerticalAlignment="Center"/>
       <Button Content="Test sound" Click="Test_Click" Margin="20,0,0,0"/>
     </StackPanel>
+    <Grid Margin="0,10,0,0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <TextBlock Grid.Column="0" Text="Alert sound" VerticalAlignment="Center" Margin="0,0,10,0"/>
+      <TextBlock Grid.Column="1" x:Name="SoundName" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" Foreground="{DynamicResource MutedBrush}"/>
+      <Button Grid.Column="2" Content="Browse" Click="Browse_Click" Margin="10,0,0,0" ToolTip="Pick a WAV or MP3 file"/>
+      <Button Grid.Column="3" x:Name="ClearSoundButton" Content="Use built-in" Click="ClearSound_Click" Margin="6,0,0,0" ToolTip="Go back to the built-in chime"/>
+    </Grid>
+    <TextBlock Margin="0,8,0,0" TextWrapping="Wrap" FontSize="12" Foreground="{DynamicResource MutedBrush}"
+               Text="WAV or MP3. Only the first 10 seconds play. If the file goes missing, the built-in chime plays instead."/>
 
     <TextBlock Text="Window" FontSize="15" FontWeight="SemiBold" Margin="0,20,0,0"/>
     <CheckBox x:Name="TopBox" Content="Keep window on top of the game" Margin="0,10,0,0" Checked="Top_Changed" Unchecked="Top_Changed"/>

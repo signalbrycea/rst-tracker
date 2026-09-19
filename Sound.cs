@@ -5,21 +5,36 @@
 using System;
 using System.IO;
 using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace RS3Tracker
 {
-    // Generates a short chime as a WAV once, then plays it through WPF's MediaPlayer so the volume slider works.
+    // Plays the alert: the user's chosen file (State.SoundPath) if it exists, else a short chime generated
+    // as a WAV once. Goes through WPF's MediaPlayer so the volume slider works. Any file is cut off after
+    // MaxSeconds so a whole song cannot play every time a timer finishes.
     public static class Sound
     {
+        public const int MaxSeconds = 10;
         static readonly MediaPlayer Player = new MediaPlayer();
+        static readonly DispatcherTimer Cap = new DispatcherTimer { Interval = TimeSpan.FromSeconds(MaxSeconds) };
         static string? _path;
 
-        public static void Play(double volume)
+        static Sound()
         {
-            if (_path == null) _path = WriteChime();
-            Player.Open(new Uri(_path));
+            Cap.Tick += (_, _) => { Cap.Stop(); Player.Stop(); };
+        }
+
+        public static void Play(double volume) => Play(volume, App.State.SoundPath);
+
+        public static void Play(double volume, string? custom)
+        {
+            var path = !string.IsNullOrWhiteSpace(custom) && File.Exists(custom) ? custom : (_path ??= WriteChime());
+            Cap.Stop();
+            Player.Stop();
+            Player.Open(new Uri(path));
             Player.Volume = Math.Clamp(volume, 0, 1);
             Player.Play();
+            Cap.Start();
         }
 
         static string WriteChime()

@@ -2,7 +2,9 @@
 // Copyright (c) 2026 signalbrycea. PolyForm Noncommercial License 1.0.0, see LICENSE.
 // Required Notice: Copyright signalbrycea (https://github.com/signalbrycea)
 
+using System.IO;
 using System.Windows;
+using Microsoft.Win32;
 
 namespace RS3Tracker
 {
@@ -20,11 +22,43 @@ namespace RS3Tracker
             TopBox.IsChecked = App.State.AlwaysOnTop;
             ConfirmBox.IsChecked = App.State.ConfirmReset;
             ConfirmRemoveBox.IsChecked = App.State.ConfirmRemove;
+            UpdateSoundName();
             CatalogPath.Text = "Timer list: " + (Storage.CatalogPathUsed ?? "(built in)");
             StatePath.Text = "Saved timers: " + Storage.StatePath;
             var ver = typeof(SettingsWindow).Assembly.GetName().Version;
-            AboutText.Text = $"RS3 Timers {ver?.Major}.{ver?.Minor}  (c) 2026 signalbrycea  PolyForm Noncommercial 1.0.0";
+            AboutText.Text = $"RS3 Timers {ver?.Major}.{ver?.Minor}.{ver?.Build}  (c) 2026 signalbrycea  PolyForm Noncommercial 1.0.0";
             _ready = true;
+        }
+
+        void UpdateSoundName()
+        {
+            var p = App.State.SoundPath;
+            if (string.IsNullOrWhiteSpace(p)) { SoundName.Text = "built-in chime"; SoundName.ToolTip = null; ClearSoundButton.IsEnabled = false; return; }
+            SoundName.Text = Path.GetFileName(p) + (File.Exists(p) ? "" : "  (missing, chime will play)");
+            SoundName.ToolTip = p;
+            ClearSoundButton.IsEnabled = true;
+        }
+
+        void Browse_Click(object sender, RoutedEventArgs e)
+        {
+            var dlg = new OpenFileDialog
+            {
+                Title = "Pick an alert sound",
+                Filter = "Sound files (*.wav;*.mp3;*.wma;*.m4a)|*.wav;*.mp3;*.wma;*.m4a|All files (*.*)|*.*",
+                CheckFileExists = true
+            };
+            if (dlg.ShowDialog(this) != true) return;
+            App.State.SoundPath = dlg.FileName;
+            App.SaveState();
+            UpdateSoundName();
+            try { Sound.Play(App.State.Volume); } catch { }   // preview the pick, even when muted
+        }
+
+        void ClearSound_Click(object sender, RoutedEventArgs e)
+        {
+            App.State.SoundPath = null;
+            App.SaveState();
+            UpdateSoundName();
         }
 
         void Volume_Changed(object sender, RoutedPropertyChangedEventArgs<double> e)
